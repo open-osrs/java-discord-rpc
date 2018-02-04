@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package club.minnced.discord.rpc;
+package net.runelite.discord;
 
 import com.sun.jna.Library;
 import com.sun.jna.Native;
@@ -67,7 +67,7 @@ public interface DiscordRPC extends Library
      *        The ID for this RPC application, 
      *        retrieved from the <a href="https://discordappc.com/developers/applications/me" target="_blank">developer dashboard</a>
      * @param handlers
-     *        Nullable instance of {@link club.minnced.discord.rpc.DiscordEventHandlers}
+     *        Nullable instance of {@link net.runelite.discord.DiscordEventHandlers}
      * @param autoRegister
      *        {@code true} to automatically call {@link #Discord_RegisterSteamGame(String, String)} or {@link #Discord_Register(String, String)}
      * @param steamId
@@ -109,7 +109,7 @@ public interface DiscordRPC extends Library
      * @param struct
      *        The new presence to use
      * 
-     * @see club.minnced.discord.rpc.DiscordRichPresence
+     * @see net.runelite.discord.DiscordRichPresence
      */
     void Discord_UpdatePresence(@Nonnull DiscordRichPresence struct);
 

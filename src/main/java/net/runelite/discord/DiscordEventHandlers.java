@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package club.minnced.discord.rpc;
+package net.runelite.discord;
 
 import com.sun.jna.Callback;
 import com.sun.jna.Structure;

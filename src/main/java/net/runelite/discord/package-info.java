@@ -17,4 +17,4 @@
 /**
  * Java bindings for the official Discord RPC SDK.
  */
-package club.minnced.discord.rpc;
+package net.runelite.discord;
