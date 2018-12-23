@@ -1,5 +1,5 @@
 /*
- *     Copyright 2016 - 2017 Florian Spieß
+ * Copyright 2016 - 2018 Florian Spieß
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,7 +73,7 @@ public interface DiscordRPC extends Library
      * @param steamId
      *        Possible steam ID of the running game
      */
-    void Discord_Initialize(String applicationId,
+    void Discord_Initialize(@Nonnull String applicationId,
                             @Nullable DiscordEventHandlers handlers,
                             boolean autoRegister,
                             @Nullable String steamId);
@@ -111,7 +111,7 @@ public interface DiscordRPC extends Library
      * 
      * @see net.runelite.discord.DiscordRichPresence
      */
-    void Discord_UpdatePresence(@Nonnull DiscordRichPresence struct);
+    void Discord_UpdatePresence(@Nullable DiscordRichPresence struct);
 
     /**
      * Clears the currently set presence.
@@ -133,9 +133,17 @@ public interface DiscordRPC extends Library
      * @param reply
      *        The reply type
      * 
-     * @see   club.minnced.discord.rpc.DiscordJoinRequest#userId DiscordJoinRequest.userId
+     * @see   club.minnced.discord.rpc.DiscordUser#userId DiscordUser.userId
      */
     void Discord_Respond(@Nonnull String userid, int reply);
+
+    /**
+     * Updates the registered event handlers to the provided struct.
+     *
+     * @param handlers
+     *        The handlers to update to, or null
+     */
+    void Discord_UpdateHandlers(@Nullable DiscordEventHandlers handlers);
 
     /**
      * Registers the given application so it can be run by the discord client. {@code discord-<appid>://}
