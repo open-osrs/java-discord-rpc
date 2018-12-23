@@ -1,5 +1,5 @@
 /*
- *     Copyright 2016 - 2017 Florian Spieß
+ * Copyright 2016 - 2018 Florian Spieß
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,16 +24,18 @@ import java.util.List;
 import java.util.Objects;
 
 /*
-typedef struct DiscordJoinRequest {
+typedef struct DiscordUser {
     const char* userId;
     const char* username;
+    const char* discriminator;
     const char* avatar;
-} DiscordJoinRequest;
+} DiscordUser;
  */
+
 /**
  * Struct binding for a discord join request.
  */
-public class DiscordJoinRequest extends Structure
+public class DiscordUser extends Structure
 {
     private static final List<String> FIELD_ORDER = Collections.unmodifiableList(Arrays.asList(
             "userId",
@@ -41,6 +43,15 @@ public class DiscordJoinRequest extends Structure
             "discriminator",
             "avatar"
     ));
+
+    public DiscordUser(String encoding) {
+        super();
+        setStringEncoding(encoding);
+    }
+
+    public DiscordUser() {
+        this("UTF-8");
+    }
 
     /**
      * The userId for the user that requests to join
@@ -67,9 +78,9 @@ public class DiscordJoinRequest extends Structure
     {
         if (this == o)
             return true;
-        if (!(o instanceof DiscordJoinRequest))
+        if (!(o instanceof DiscordUser))
             return false;
-        DiscordJoinRequest that = (DiscordJoinRequest) o;
+        DiscordUser that = (DiscordUser) o;
         return Objects.equals(userId, that.userId)
                 && Objects.equals(username, that.username)
                 && Objects.equals(discriminator, that.discriminator)

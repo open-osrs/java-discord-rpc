@@ -10,5 +10,6 @@ bin/*
 .idea/
 .settings/
 build/
-discord-rpc.iml
+*.iml
+gradle.properties
 /target/
