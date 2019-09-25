@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.runelite.discord;
+package dev.openosrs.discord;
 
 import com.sun.jna.Library;
 import com.sun.jna.Native;
@@ -39,7 +39,7 @@ public interface DiscordRPC extends Library
     /**
      * Library instance.
      */
-    DiscordRPC INSTANCE = Native.loadLibrary("discord-rpc", DiscordRPC.class);
+    DiscordRPC INSTANCE = (DiscordRPC) Native.loadLibrary("discord-rpc", DiscordRPC.class);
 
     /**
      * Used to decline a request via {@link #Discord_Respond(String, int)}
@@ -67,7 +67,7 @@ public interface DiscordRPC extends Library
      *        The ID for this RPC application, 
      *        retrieved from the <a href="https://discordappc.com/developers/applications/me" target="_blank">developer dashboard</a>
      * @param handlers
-     *        Nullable instance of {@link net.runelite.discord.DiscordEventHandlers}
+     *        Nullable instance of {@link DiscordEventHandlers}
      * @param autoRegister
      *        {@code true} to automatically call {@link #Discord_RegisterSteamGame(String, String)} or {@link #Discord_Register(String, String)}
      * @param steamId
@@ -109,7 +109,7 @@ public interface DiscordRPC extends Library
      * @param struct
      *        The new presence to use
      * 
-     * @see net.runelite.discord.DiscordRichPresence
+     * @see DiscordRichPresence
      */
     void Discord_UpdatePresence(@Nullable DiscordRichPresence struct);
 

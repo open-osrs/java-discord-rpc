@@ -17,4 +17,4 @@
 /**
  * Java bindings for the official Discord RPC SDK.
  */
-package net.runelite.discord;
+package dev.openosrs.discord;

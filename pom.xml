@@ -3,14 +3,15 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<name>Java Discord RPC</name>
-	<groupId>net.runelite</groupId>
+	<groupId>dev.openosrs</groupId>
 	<artifactId>discord</artifactId>
-	<version>1.2-SNAPSHOT</version>
+	<version>2.0.2</version>
 
 	<distributionManagement>
 		<repository>
-			<id>runelite</id>
-			<url>dav:http://repo.runelite.net</url>
+			<id>github</id>
+			<name>GitHub runelite-extended Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/runelite-extended/java-discord-rpc</url>
 		</repository>
 	</distributionManagement>
 
@@ -18,7 +19,7 @@
 		<dependency>
 			<groupId>net.java.dev.jna</groupId>
 			<artifactId>jna</artifactId>
-			<version>4.5.1</version>
+			<version>3.5.2</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.code.findbugs</groupId>
@@ -32,7 +33,7 @@
 			<extension>
 				<groupId>org.apache.maven.wagon</groupId>
 				<artifactId>wagon-webdav-jackrabbit</artifactId>
-				<version>2.12</version>
+				<version>3.3.2</version>
 			</extension>
 		</extensions>
 		<plugins>
@@ -40,8 +41,8 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>7</source>
-					<target>7</target>
+					<source>11</source>
+					<target>11</target>
 				</configuration>
 			</plugin>
 		</plugins>
