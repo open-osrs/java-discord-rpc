@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.runelite.discord;
+package dev.openosrs.discord;
 
 import com.sun.jna.Structure;
 
@@ -37,14 +37,8 @@ typedef struct DiscordUser {
  */
 public class DiscordUser extends Structure
 {
-    private static final List<String> FIELD_ORDER = Collections.unmodifiableList(Arrays.asList(
-            "userId",
-            "username",
-            "discriminator",
-            "avatar"
-    ));
-
-    public DiscordUser(String encoding) {
+    private static final List<String> FIELD_ORDER = List.of("userId", "username", "discriminator", "avatar");
+	public DiscordUser(String encoding) {
         super();
         setStringEncoding(encoding);
     }
@@ -73,6 +67,11 @@ public class DiscordUser extends Structure
      */
     public String avatar;
 
+	/**
+	 *
+	 */
+	public String stringEncoding;
+
     @Override
     public boolean equals(Object o)
     {
@@ -98,4 +97,14 @@ public class DiscordUser extends Structure
     {
         return FIELD_ORDER;
     }
+
+	public void setStringEncoding(String stringEncoding)
+	{
+		this.stringEncoding = stringEncoding;
+	}
+
+	public String getStringEncoding()
+	{
+		return stringEncoding;
+	}
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.runelite.discord;
+package dev.openosrs.discord;
 
 import com.sun.jna.Callback;
 import com.sun.jna.Structure;
