@@ -10,8 +10,8 @@
 	<distributionManagement>
 		<repository>
 			<id>github</id>
-			<name>GitHub runelite-extended Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/runelite-extended/java-discord-rpc</url>
+			<name>GitHub OpenOSRS Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/open-osrs/java-discord-rpc</url>
 		</repository>
 	</distributionManagement>
 
